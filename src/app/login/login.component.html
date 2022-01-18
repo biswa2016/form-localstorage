@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5 m-auto">
+            <div class="card">
+                <div class="Card-header bg-warning text-white text-center">
+                    <h2>User Login</h2>
+                </div>
+                <div class="card-body bg-info ">
+                    <form #logForm="ngForm" (ngSubmit)="login(logForm)">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">User Id</label>
+                          <input #luid="ngModel" type="email" required minlength="6" maxlength="15" pattern="[a-zA-z]+$" class="form-control" name="luid" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel>
+                          <span style="color: red;" *ngIf="luid.invalid && luid.touched">Enter a valid User Id</span>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input #lupass="ngModel" required Validators pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" type="password" name="lupass" class="form-control" id="exampleInputPassword1" ngModel>
+                          <span style="color: red;" *ngIf="lupass.invalid && lupass.touched" > Password is Week</span>
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
